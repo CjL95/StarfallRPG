@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.game.tsbuildinfo",
+    "lib": [
+      "ES2023"
+    ],
+    "types": []
+  },
+  "include": [
+    "src/game"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
+}

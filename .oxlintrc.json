@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "react",
+    "typescript",
+    "oxc"
+  ],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/game/**/*.ts"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "react",
+                  "react/**",
+                  "react-dom",
+                  "react-dom/**",
+                  "**/ui",
+                  "**/ui/**",
+                  "**/adapters",
+                  "**/adapters/**"
+                ],
+                "message": "Game code must not depend on React, UI, or platform adapters."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
